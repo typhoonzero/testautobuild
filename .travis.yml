@@ -10,7 +10,8 @@ env:
     - secure: "rF42ianm232JnTJ2/hrIAnM7jVV45xEh7zdb8rt6xlCiKBP6k+k8qXaMIi1/Mdlc3jSluRRn6d/n0QOVGaGgESW34xRYeuQTwePRQXOA7N6MKTjzblYqR9DbA5DqO1Bm8hAj66gwBlNJ45gTDRsKxvQvEQYC7Ga5AS0GVu0fiRXbQ7CMZI2JmfvmZk1d1T033V5n+Dqxz+4ZtAe55lAW1bkOWFoAcvwMw9Ou7JUL96kFhjJgy3C/Yh2RrELfr4VusapgmjaVWSG5DzeYGE3XNBsd68quT4O+CxQYBuxhztWED6SVGMYSTqjTrmhcUAFn+lU43f/XcQPRTyOBoudCPjnEjFlRz+Wt7FjiIr5CxPQN3PK+jXu8mTgvwIn7BDU+wNksBLNKej5UyndxgN1xNZNFiRUq5kcyWJCn8NvWmUN82asnghHq2IHg4Nssl95eLbmN1gUCjHu50suzoqY0ZFMY+sCq+/YIbK9u6CCTgiWOEnm1xYJMqOFKSZDGCBlWMB+6Uo/czrBy6ZbYXKNVct+K3Y6evuyzEx3FbHsYfGM+23I2qFItJ9HL+X7RLgV/yvghiV8NJ2T0ec7hm/2VpKRv9f83M333dnkd3dNiPLn5fAVNwudhklt2odz1ihOWpBL4NupzYik0TMyJjMX2NrCuFW5dQkvCJXZtU1Xu3Ic="
     - COMMIT=${TRAVIS_COMMIT::8}
 
-
+script:
+  - echo "fake build..."
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker build -t typhoon1986/testbuild .
