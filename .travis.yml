@@ -1,0 +1,18 @@
+sudo: required
+
+services:
+  - docker
+
+env:
+  global:
+    - secure: "UkF2CHX0lUZ...VI/LE=" # DOCKER_EMAIL
+    - secure: "Z3fdBNPt5hR...VI/LE=" # DOCKER_USER
+    - secure: "F4XbD6WybHC...VI/LE=" # DOCKER_PASS
+    - COMMIT=${TRAVIS_COMMIT::8}
+
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push typhoon1986/testbuild;
+    fi
